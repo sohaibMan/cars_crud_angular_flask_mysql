@@ -1,0 +1,31 @@
+<mat-toolbar style="position: absolute;top: 0">
+  <span>Login</span>
+</mat-toolbar>
+<div
+  style="width: 100vw;height: 100vh;display: flex;align-content: center;justify-content: center;">
+  <form (ngSubmit)="submitHandler($event)" name="signUp"
+        style="width: 50%;display: flex;align-content: center;justify-content: center;flex-direction: column;">
+    <p style="color:#f03e3e" *ngIf="!isUserNameValid">The username must be longer than 5 characters </p>
+    <mat-form-field appearance="fill">
+      <mat-label>user name</mat-label>
+      <input [(ngModel)]="username" id="username" name="username" type="text"
+             matInput required/>
+    </mat-form-field>
+    <p style="color:#f03e3e" *ngIf="!isPasswordNameValid">The password must be longer than 5 characters </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input [(ngModel)]="password" id="password" name="password" matInput [type]="hide ? 'password' :
+      'text'" required/>
+
+      <button type="submit" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <p style="color:#f03e3e" *ngIf="responseErrorMessage">{{responseErrorMessage}} </p>
+    <button mat-flat-button extended color="primary">Submit</button>
+    <a style="margin-top: 1rem" routerLink="/signup">Dont have an Account ? sign up</a>
+
+  </form>
+
+</div>
