@@ -21,7 +21,7 @@ class Car:
         }
     def save(self):
         myCursor = db.cursor()
-        req = "INSERT INTO cars_db.carsRoute (year, make, model, body_styles) VALUES (%s, %s, %s, %s)"
+        req = "INSERT INTO cars_db.cars (year, make, model, body_styles) VALUES (%s, %s, %s, %s)"
         val = (request.json['year'], request.json['make'], request.json['model'], request.json['body_styles'])
         myCursor.execute(req, val)
         db.commit()

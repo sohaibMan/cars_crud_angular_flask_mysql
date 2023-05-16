@@ -17,6 +17,7 @@ DB_USERNAME=<your-db-username></br>
 DB_HOST=<your-db-host></br>
 DB_NAME=<your-db-name></br>
 JWT_SECRET_KEY=<your-jwt-secret-key>;
+JWT_ACCESS_TOKEN_EXPIRES=<time in minutes>
 
 ```
 python3 server.py
@@ -41,6 +42,7 @@ POST /api/v1/signup</br>
 
 ### pages 
 /</br>
+/cars </br>
 /signup</br>
 /login</br>
 

@@ -96,7 +96,7 @@ def create_car():
     if 'year' not in request.json or 'make' not in request.json or 'model' not in request.json or 'body_styles' not in request.json:
         return jsonify({"message": "year, make, model, body_styles are required"}), 400
     # prepare statement
-    car = Car(request.json['year'], request.json['make'], request.json['model'], request.json['body_styles'])
+    car = Car(1, request.json['year'], request.json['make'], request.json['model'], request.json['body_styles'])
     car.save()
 
     return jsonify({"message": "car created successfully"})

@@ -15,12 +15,7 @@ export class ApiServiceService {
   constructor(private http: HttpClient) {
   }
 
-  // getCarList(): Observable<Car[]> {
-  //
-  //   return this.http.get('http://localhost:5000/api/v1/cars', {
-  //     headers: this.headers
-  //   }) as Observable<Car[]>
-  // }
+
 
   getCarListPagination(page: number, limit: number) {
     const params = new HttpParams().set('page', page).set('limit', limit)
@@ -36,7 +31,7 @@ export class ApiServiceService {
     }) as Observable<Car>
   }
 
-  deleteCar(id: string) {
+  deleteCar(id: number) {
     return this.http.delete('http://localhost:5000/api/v1/cars/' + id, {
       headers: this.headers
     })
@@ -44,4 +39,22 @@ export class ApiServiceService {
 
   }
 
+  addCar(year: number, make: string, model: string, body_styles: string) {
+    const body = JSON.stringify({year, make, model, body_styles})
+    console.log(body)
+    return this.http.post('http://localhost:5000/api/v1/cars/', body, {
+      headers: this.headers
+
+    })
+
+  }
+
+  editCar(car: Car) {
+    const body = JSON.stringify(car)
+    return this.http.put('http://localhost:5000/api/v1/cars/' + car.car_id, body, {
+      headers: this.headers
+
+    })
+
+  }
 }

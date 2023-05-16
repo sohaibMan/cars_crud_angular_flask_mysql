@@ -1,0 +1,25 @@
+<div mat-dialog-content>
+  <p>Edit new car</p>
+  <div style="display: flex;flex-direction: column;">
+    <mat-form-field>
+      <mat-label>year</mat-label>
+      <input type="number" [defaultValue]="year" matInput required [(ngModel)]="year">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>make</mat-label>
+      <input matInput required [(ngModel)]="make">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>model</mat-label>
+      <input matInput required [(ngModel)]="model">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>body styles</mat-label>
+      <input matInput required [(ngModel)]="body_styles">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="[year,make,model,body_styles]" cdkFocusInitial>Confirm</button>
+</div>
