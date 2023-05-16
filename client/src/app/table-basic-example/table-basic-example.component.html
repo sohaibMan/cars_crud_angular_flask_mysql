@@ -1,38 +1,46 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="cars" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Position Column -->
+  <!-- Car id Column -->
   <ng-container matColumnDef="car_id">
-    <th mat-header-cell *matHeaderCellDef> Id. </th>
-    <td mat-cell *matCellDef="let element"> {{element.car_id}} </td>
+    <th mat-header-cell *matHeaderCellDef> Id.</th>
+    <td mat-cell *matCellDef="let car"> {{car.car_id}} </td>
   </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Year </th>
-    <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+  <!-- Year Column -->
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef> Year</th>
+    <td mat-cell *matCellDef="let car"> {{car.year}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Make </th>
-    <td mat-cell *matCellDef="let element"> {{element.make}} </td>
+  <!-- Make Column -->
+  <ng-container matColumnDef="make">
+    <th mat-header-cell *matHeaderCellDef> Make</th>
+    <td mat-cell *matCellDef="let car"> {{car.make}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Model </th>
-    <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+  <!-- Model Column -->
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef> Model</th>
+    <td mat-cell *matCellDef="let car"> {{car.model}} </td>
+  </ng-container>
+
+  <!-- body styles Column -->
+  <ng-container matColumnDef="body_styles">
+    <th mat-header-cell *matHeaderCellDef> body styles</th>
+    <td mat-cell *matCellDef="let car"> {{car.body_styles | arrayToString}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [length]="100"
-               [pageSize]="10"
-               [pageSizeOptions]="[5, 10, 25, 100]"
+<mat-paginator #paginator
+               (page)="handlePageEvent($event)"
+               [length]="count"
+               [pageSize]="limit"
+               [pageSizeOptions]="[5, 10, 20]"
                aria-label="Select page">
 </mat-paginator>
 

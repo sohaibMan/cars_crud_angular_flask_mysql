@@ -30,24 +30,25 @@ mysql -u <your-db-username> -p <your-db-name> < database.sql
 
 ### routes 
 
-GET /api/v1/cars (get all cars)
-GET /api/v1/cars/{card_id} ( get a car by id)
-POST /api/v1/cars ( create a car)
-PUT /api/v1/cars ( edit a car by id )
-DELETE /api/v1/cars (delete a car by id)
-POST /api/v1/login
-POST /api/v1/signup
+GET /api/v1/cars (get all cars)</br>
+GET /api/v1/cars/{card_id} ( get a car by id)</br>
+POST /api/v1/cars ( create a car)</br>
+PUT /api/v1/cars ( edit a car by id )</br>
+DELETE /api/v1/cars (delete a car by id)</br>
+POST /api/v1/login</br>
+POST /api/v1/signup</br>
 
 
 ### pages 
-/
-/signup
-/login
+/</br>
+/signup</br>
+/login</br>
 
 
 
 ### TODOS :
 complete the crud tables in the front end
+
 link the cars table to the users table
 
 

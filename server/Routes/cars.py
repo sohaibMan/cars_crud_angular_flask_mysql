@@ -25,16 +25,15 @@ def get_car_by_id(car_id):
 @carsRoute.route('/', methods=['GET'])
 @jwt_required()
 def get_cars():
-    print(request.args)
     args = request.args
     page = args.get('page')
-    count = args.get('count')
-    if page is None or count is None:
+    limit = args.get('limit')
+    if page is None or limit is None:
         page = 0
-        count = 10
-    if int(page) < 0 or int(count) < 0:
-        return jsonify({"message": "page and count must be positive"})
-    if int(count) > 20:
+        limit = 10
+    if int(page) < 0 or int(limit) < 0:
+        return jsonify({"message": "page and limit must be positive"})
+    if int(limit) > 20:
         return jsonify({"message": "count must be less than 10"})
 
     cars = []
@@ -42,14 +41,17 @@ def get_cars():
     # another way to do it
     # req = "SELECT * FROM cars_db.carsRoute LIMIT %s OFFSET %s"
     cursor = db.cursor()
-    cursor.execute(req, (page, count))
+    cursor.execute(req, (int(page), int(limit)))
     results = cursor.fetchall()
-
+    req = "EXPLAIN SELECT COUNT(*) FROM cars_db.cars"
+    cursor.execute(req)
+    result = cursor.fetchone()
+    count = result[9]  # count(*)
     for result in results:
         car = Car(result[0], result[1], result[2], result[3], result[4])
         cars.append(car.__dict__())
 
-    return cars
+    return jsonify({"cars": cars, "count": count})
 
 
 #  delete car by id

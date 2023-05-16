@@ -16,6 +16,7 @@ import { TableBasicExampleComponent } from './table-basic-example/table-basic-ex
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {HttpClientModule} from "@angular/common/http";
+import {ArrayToStringPipe} from "./array-to-string.pipe";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     SignUpComponent,
     LoginComponent,
     TableBasicExampleComponent,
-    TableBasicExampleComponent
+    TableBasicExampleComponent,
+    ArrayToStringPipe
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,9 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    ArrayToStringPipe
+  ]
 })
 export class AppModule { }
