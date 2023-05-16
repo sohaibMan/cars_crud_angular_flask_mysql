@@ -3,12 +3,12 @@ import {ApiServiceService} from "../api-service.service";
 import {PageEvent} from "@angular/material/paginator";
 
 @Component({
-  selector: 'app-table-basic-example',
-  templateUrl: './table-basic-example.component.html',
-  styleUrls: ['./table-basic-example.component.css']
+  selector: 'app-cars-table',
+  templateUrl: './cars-table.component.html',
+  styleUrls: ['./cars-table.component.css']
 })
-export class TableBasicExampleComponent implements OnInit {
-  displayedColumns: string[] = ['car_id', 'year', 'make', 'model', 'body_styles'];
+export class CarsTableComponent implements OnInit {
+  displayedColumns: string[] = ['car_id', 'year', 'make', 'model', 'body_styles', 'actions'];
   cars: Car[] = [];
   page: number = 1;
   limit: number = 10;
@@ -46,6 +46,18 @@ export class TableBasicExampleComponent implements OnInit {
         this.count = count;
       }
     )
+
+  }
+
+  addCar() {
+
+  }
+
+  editCar(car:Car) {
+
+  }
+
+  deleteCar(car:Car) {
 
   }
 }

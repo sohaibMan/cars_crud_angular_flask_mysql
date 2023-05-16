@@ -12,20 +12,22 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginComponent } from './login/login.component';
-import { TableBasicExampleComponent } from './table-basic-example/table-basic-example.component';
+import { CarsTableComponent } from './cars-table/cars-table.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {HttpClientModule} from "@angular/common/http";
 import {ArrayToStringPipe} from "./array-to-string.pipe";
+import { CarsComponent } from './cars/cars.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     LoginComponent,
-    TableBasicExampleComponent,
-    TableBasicExampleComponent,
-    ArrayToStringPipe
+    CarsTableComponent,
+    CarsTableComponent,
+    ArrayToStringPipe,
+    CarsComponent
   ],
   imports: [
     BrowserModule,

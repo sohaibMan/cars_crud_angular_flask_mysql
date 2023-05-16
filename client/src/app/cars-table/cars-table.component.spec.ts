@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableBasicExampleComponent } from './table-basic-example.component';
+import { CarsTableComponent } from './cars-table.component';
 
 describe('TableBasicExampleComponent', () => {
-  let component: TableBasicExampleComponent;
-  let fixture: ComponentFixture<TableBasicExampleComponent>;
+  let component: CarsTableComponent;
+  let fixture: ComponentFixture<CarsTableComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TableBasicExampleComponent]
+      declarations: [CarsTableComponent]
     });
-    fixture = TestBed.createComponent(TableBasicExampleComponent);
+    fixture = TestBed.createComponent(CarsTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

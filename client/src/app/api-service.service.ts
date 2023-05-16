@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Car} from "./table-basic-example/table-basic-example.component";
+import {Car} from "./cars-table/cars-table.component";
 import {Observable} from "rxjs";
 
 @Injectable({
