@@ -45,12 +45,3 @@ POST /api/v1/signup</br>
 /cars </br>
 /signup</br>
 /login</br>
-
-
-
-### TODOS :
-complete the crud tables in the front end
-
-link the cars table to the users table
-
-
