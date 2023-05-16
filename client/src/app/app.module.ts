@@ -12,12 +12,18 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginComponent } from './login/login.component';
+import { TableBasicExampleComponent } from './table-basic-example/table-basic-example.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    TableBasicExampleComponent,
+    TableBasicExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,10 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

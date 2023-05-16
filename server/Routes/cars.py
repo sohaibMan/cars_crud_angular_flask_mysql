@@ -8,7 +8,7 @@ from connection.mysql_connection import db
 carsRoute = Blueprint('carsRoute', __name__, url_prefix="/api/v1/cars")
 
 
-# get all car by id
+# get  car by id
 @jwt_required()
 @carsRoute.route('<int:car_id>', methods=['GET'])
 def get_car_by_id(car_id):
@@ -25,6 +25,7 @@ def get_car_by_id(car_id):
 @carsRoute.route('/', methods=['GET'])
 @jwt_required()
 def get_cars():
+    print(request.args)
     args = request.args
     page = args.get('page')
     count = args.get('count')
