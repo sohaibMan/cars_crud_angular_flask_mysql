@@ -1,9 +1,9 @@
 
 
 ### what is that ?
-This is simple project with flask and mysql and jwt for authentication as  backend and angular for frontend with angular materials 
+This is simple project with flask and mysql and jwt for authentication and angular for frontend with angular materials  ui library
 ### Note:
-all the routes are protected with jwt so you need to login first to get the token and then use it in the header of each request request
+All the routes are protected(client/server) with jwt auth so you need to login first to get the token and then use it in the header of each request request
 
 ## how to install :
 ### install the requirements :
